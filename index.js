@@ -2,10 +2,14 @@ const express = require('express');
 const bodyParser = require("body-parser");
 const https = require("https");
 const mongoose = require('mongoose');
+const dotenv = require("dotenv");
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use(express.static('public'));
+
+dotenv.config();
 
 mongoose.connect(
     process.env.DB_CONNECT,
@@ -15,7 +19,7 @@ mongoose.connect(
 
 const funcRoutes = require("./routes/route");
 
-const url = "https://api.nasa.gov/planetary/apod?api_key=71w53BvnT9ekc1OhJ0JF3aqVkRFAfNXFffZvfQVO";
+
 
 
 

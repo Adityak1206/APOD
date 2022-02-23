@@ -1,6 +1,7 @@
 const dbModel = require('../Schema/apodmongo');
 
 
+
 const getData = async (date) => {
 
     const data = await db.findOne({ date }, { _id: 0, copyright: 0, __v: 0 });
@@ -19,3 +20,5 @@ module.exports = {
     getData,
     setData
 }
+
+
