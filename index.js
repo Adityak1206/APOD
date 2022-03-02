@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 dotenv.config();
-
+app.use('view engine', 'ejs');
 mongoose.connect(
     process.env.DB_CONNECT,
     { useUnifiedTopology: true, useNEWUrlParser: true },
@@ -25,7 +25,7 @@ const funcRoutes = require("./routes/route");
 
 
 
-app.listen(3000, function () {
-    console.log("Listening on port 3000");
+app.listen(8000, function () {
+    console.log("Listening on port 8000");
 });
 
